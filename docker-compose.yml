@@ -1,0 +1,11 @@
+version: "3"
+services:
+  wiremock:
+    image: wiremock/wiremock:latest
+    ports:
+      - "8181:8080"
+    volumes:
+      - ./wiremock/:/./home/wiremock/
+    command:
+      - -verbose
+      - -global-response-templating

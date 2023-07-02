@@ -1,0 +1,15 @@
+{
+  "request": {
+    "urlPathPattern": "/users/99\\d\\d",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": "User #{{request.path.[1]}}",
+    "delayDistribution": {
+      "type": "lognormal",
+      "median": 10000,
+      "sigma": 0.4
+    }
+  }
+}
